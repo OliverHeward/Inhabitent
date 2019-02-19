@@ -5,10 +5,10 @@
 /* Links */
 
 a {
-	color: $color__link;
-
+	   color: #248a83;
 	&:visited {
-		color: $color__link-visited;
+		// color: $color__link-visited;
+		text-decoration: none;
 	}
 	&:hover,
 	&:focus,
@@ -27,10 +27,9 @@ a {
 /* Menus */
 
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	display: flex;
+	font-family: 'Novecento Sans Web' ,sans-serif;
+    text-transform: uppercase;
 
 	ul {
 		display: none;
@@ -60,6 +59,7 @@ a {
 
 			a {
 				width: 200px;
+
 			}
 
 			:hover > a,
@@ -77,8 +77,9 @@ a {
 		}
 	}
 	li {
-		float: left;
+		float: right;
 		position: relative;
+		padding: 10px;
 
 		&:hover > a,
 		&.focus > a {

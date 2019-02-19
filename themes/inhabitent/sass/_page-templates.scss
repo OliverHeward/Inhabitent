@@ -3,3 +3,29 @@
 --------------------------------------------------------------*/
 
 /* Front page */
+
+.header-wrap {
+    height: 700px;
+    width: 100%;
+}
+
+    .shop {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .do-container {
+        margin: 30px;
+        flex: 0 1 23.5%;
+        max-width: 23.5%;
+        height: 300px;
+        padding: .75rem;
+        display: block;
+        border: 1px solid #e1e1e1;
+        border-top-width: 5px;
+
+        .do-container:hover {
+        	border-color: #d99054;
+        }
+}

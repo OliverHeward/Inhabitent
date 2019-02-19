@@ -222,9 +222,50 @@ td,
 th {
   padding: 0; }
 
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1120px; }
+
 /*--------------------------------------------------------------
 # Embedded Fonts
 --------------------------------------------------------------*/
+@font-face {
+  font-family: 'Merriweather';
+  src: url("Merriweather-LightItalic.woff2") format("woff2"), url("Merriweather-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Novovento Sans Web';
+  src: url("47877999d363d27257874f0f6df22b59.woff2") format("woff2"), url("47877999d363d27257874f0f6df22b59.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url("Merriweather-BoldItalic.woff2") format("woff2"), url("Merriweather-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url("Merriweather-Bold.woff2") format("woff2"), url("Merriweather-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url("Merriweather-Light.woff2") format("woff2"), url("Merriweather-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Novovento Sans Web';
+  src: url("b36bfa0075ed0cce867f26e6f1a6dd62.woff2") format("woff2"), url("b36bfa0075ed0cce867f26e6f1a6dd62.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -241,7 +282,10 @@ textarea {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  clear: both;
+  font-family: 'Novecento Sans Web',sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
 
 /* Copy */
 p {
@@ -268,7 +312,7 @@ pre {
   padding: 1.6rem; }
 
 code, kbd, tt, var {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: "Novovento Sans Web";
   font-size: 15px;
   font-size: 0.9375rem; }
 
@@ -420,9 +464,9 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: royalblue; }
+  color: #248a83; }
   a:visited {
-    color: purple; }
+    text-decoration: none; }
   a:hover, a:focus, a:active {
     color: midnightblue; }
   a:focus {
@@ -432,10 +476,11 @@ a {
 
 /* Menus */
 .main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Novecento Sans Web' ,sans-serif;
+  text-transform: uppercase; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -461,8 +506,9 @@ a {
     .main-navigation ul li.focus > ul {
       left: auto; }
   .main-navigation li {
-    float: left;
-    position: relative; }
+    float: right;
+    position: relative;
+    padding: 10px; }
   .main-navigation a {
     display: block;
     text-decoration: none; }
@@ -496,6 +542,64 @@ a {
   float: right;
   text-align: right;
   width: 50%; }
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.site-header {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid #e1e1e1;
+  height: 50px;
+  padding: .5rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .site-header .container {
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 1120px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .site-header .logo {
+    height: 33px;
+    width: 50px; }
+
+.main-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.site-footer {
+  background: url(../../images/dark-wood@2x.png);
+  background-size: 512px 512px; }
+
+.footer-blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.footer-block-item {
+  margin: 3rem 0;
+  padding-right: 1.5rem;
+  width: 25%; }
+
+.site-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -559,7 +663,7 @@ a {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5rem;
+  margin: 0 0 .3rem;
   /* Make sure select elements fit in widgets. */ }
   .widget select {
     max-width: 100%; }
@@ -574,6 +678,48 @@ a {
 /* Posts and pages */
 .sticky {
   display: block; }
+
+.site-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1120px;
+  padding-top: 50px; }
+
+.single-post .content-area {
+  border-right: 1px solid #e1e1e1;
+  padding-right: 5%;
+  width: 73%;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+
+.single-post .entry-header {
+  top: 0;
+  height: auto;
+  width: 100%;
+  position: relative; }
+
+.single-post .entry-title {
+  background-color: #248a83;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5em 1em;
+  position: absolute;
+  max-width: 75%;
+  top: 0; }
+
+.single-post .entry-meta {
+  background-color: #248a83;
+  bottom: 7px;
+  color: #fff;
+  display: inline-block;
+  font-family: 'Novecento Sans Web',sans-serif;
+  padding: 1.00005rem 1.5rem;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase; }
 
 .hentry {
   margin: 0 0 1.5rem; }
@@ -598,6 +744,11 @@ a {
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
   display: none; }
+
+.sidebar {
+  padding-left: 5%;
+  padding-top: 5%;
+  width: 27%; }
 
 /* Comments */
 .comment-content a {
@@ -670,3 +821,29 @@ object {
 # Page Templates
 --------------------------------------------------------------*/
 /* Front page */
+.header-wrap {
+  height: 700px;
+  width: 100%; }
+
+.shop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.do-container {
+  margin: 30px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 23.5%;
+          flex: 0 1 23.5%;
+  max-width: 23.5%;
+  height: 300px;
+  padding: .75rem;
+  display: block;
+  border: 1px solid #e1e1e1;
+  border-top-width: 5px; }
+  .do-container .do-container:hover {
+    border-color: #d99054; }

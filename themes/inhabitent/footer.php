@@ -10,9 +10,12 @@
 			</div><!-- #content -->
 
 			<footer id="colophon" class="site-footer" role="contentinfo">
+				<div class="footer-blocks container">
+					<?php dynamic_sidebar('footer-1');?>
+				</div>
+
 				<div class="site-info">
-					<a href="<?php echo esc_url('https://wordpress.org/'); ?>"><?php printf(esc_html('Proudly powered by %s'), 'WordPress');?></a>
-					<i class="fab fa-twitter"></i>
+					<a href="<?php echo esc_url('https://wordpress.org/'); ?>"><?php printf(esc_html('COPYRIGHT @ Inhabitent %s'), '');?></a>
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 		</div><!-- #page -->

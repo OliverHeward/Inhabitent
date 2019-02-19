@@ -8,6 +8,56 @@
 	display: block;
 }
 
+.site-content {
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1120px;
+    padding-top: 50px;
+}
+
+.single-post {
+
+	.content-area {
+	border-right: 1px solid #e1e1e1;
+    padding-right: 5%;
+    width: 73%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+	}
+
+ 	.entry-header {
+ 		top: 0;
+		height: auto;
+		width: 100%;
+		position: relative;
+	}
+
+	.entry-title {
+		background-color: #248a83;
+		color: #fff;
+		font-size: 2rem;
+		padding: 0.5em 1em;
+		position: absolute;
+		max-width: 75%;
+		top: 0;
+	}
+
+	.entry-meta {
+		background-color: #248a83;
+    	bottom: 7px;
+    	color: #fff;
+    	display: inline-block;
+    	font-family: 'Novecento Sans Web',sans-serif;
+    	padding: 1.00005rem 1.5rem;
+    	position: absolute;
+    	right: 0;
+    	text-transform: uppercase;
+	}
+}
+
+
 .hentry {
 	margin: 0 0 $base__space-unit;
 }
@@ -32,11 +82,19 @@
 	margin: 0 0 $base__space-unit;
 }
 
+
+
 /* Asides */
 
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
+}
+
+.sidebar {
+	padding-left: 5%;
+	padding-top: 5%;
+	width: 27%;
 }
 
 /* Comments */
@@ -47,3 +105,5 @@
 .bypostauthor {
 	display: block;
 }
+
+

@@ -1,0 +1,19 @@
+.site-footer {
+	background: url(../../images/dark-wood@2x.png);
+	background-size: 512px 512px;
+}
+
+.footer-blocks {
+	display: flex;
+}
+
+.footer-block-item {
+		margin: ($base__space-unit * 2) 0;
+		padding-right: $base__space-unit;
+		width: 25%;
+}
+
+.site-info {
+	display: flex;
+	justify-content: center;
+}

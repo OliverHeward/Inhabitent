@@ -64,6 +64,16 @@ function red_starter_widgets_init() {
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	));
+
+	register_sidebar(array(
+		'name' => esc_html('Footer'),
+		'id' => 'footer-1',
+		'description' => '',
+		'before_widget' => '<div class="footer-block-item">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
+	));
 }
 add_action('widgets_init', 'red_starter_widgets_init');
 
@@ -94,6 +104,100 @@ function red_starter_scripts() {
 	}
 }
 add_action('wp_enqueue_scripts', 'red_starter_scripts');
+
+function create_post_type() {
+	register_post_type('acme_product',
+		array(
+			'labels' => array(
+				'name' => __('Shop Stuff'),
+				'singular_name' => __('Shop Stuff'),
+			),
+			'public' => true,
+			'has_archive' => true,
+		)
+	);
+}
+add_action('init', 'create_post_type');
+
+function create_post_type2() {
+	register_post_type('acme_magazines',
+		array(
+			'labels' => array(
+				'name' => __('Inhabitent Journal'),
+				'singular_name' => __('Inhabitent Journal'),
+			),
+			'public' => true,
+			'has_archive' => true,
+		)
+	);
+}
+add_action('init', 'create_post_type2');
+
+add_action('init', 'create_book_tax');
+
+function create_book_tax() {
+	register_taxonomy(
+		'Do Stuff',
+		'acme_product',
+		array(
+			'label' => __('Do Stuff'),
+			'rewrite' => array('slug' => 'Do Stuff'),
+			'hierarchical' => true,
+		)
+	);
+}
+
+add_action('init', 'create_book_tax2');
+
+function create_book_tax2() {
+	register_taxonomy(
+		'Eat Stuff',
+		'acme_product',
+		array(
+			'label' => __('Eat Stuff'),
+			'rewrite' => array('slug' => 'Eat Stuff'),
+			'hierarchical' => true,
+		)
+	);
+}
+
+/**
+ * Register meta boxes.
+ */
+function hcf_register_meta_boxes() {
+	add_meta_box('hcf-1', __('Logo:', 'hcf'), 'hcf_display_callback', 'page');
+}
+add_action('add_meta_boxes', 'hcf_register_meta_boxes');
+
+/**
+ * Meta box display callback.
+ *
+ * @param WP_Post $post Current post object.
+ */
+function hcf_display_callback($post) {
+	echo "<p class=\"meta-options hcf_field\">
+        <label for=\"hcf_author\">Author</label>
+        <input id=\"hcf_author\" type=\"text\" name=\"hcf_author\" value=\"" . esc_attr(get_post_meta(get_the_ID(), 'hcf_author', true)) . "\"/></p>";
+}
+
+function hcf_save_meta_box($post_id) {
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		return;
+	}
+
+	if ($parent_id = wp_is_post_revision($post_id)) {
+		$post_id = $parent_id;
+	}
+	$fields = [
+		'hcf_author',
+	];
+	foreach ($fields as $field) {
+		if (array_key_exists($field, $_POST)) {
+			update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
+		}
+	}
+}
+add_action('save_post', 'hcf_save_meta_box');
 
 /**
  * Custom template tags for this theme.
