@@ -4,28 +4,343 @@
 
 /* Front page */
 
-.header-wrap {
-    height: 700px;
-    width: 100%;
-}
 
+
+.page-id-44 {
+
+    .journal,
     .shop {
+        margin-bottom: 3rem;
+    }
+
+    section.hero {
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.4) 100%),
+            #969696 url('../../images/home-hero.jpg') no-repeat top;
+        background-size: 100%;
         display: flex;
-        text-align: center;
+        flex-direction: column;
         justify-content: center;
     }
 
-    .do-container {
-        margin: 30px;
-        flex: 0 1 23.5%;
-        max-width: 23.5%;
-        height: 300px;
-        padding: .75rem;
-        display: block;
-        border: 1px solid #e1e1e1;
-        border-top-width: 5px;
+    .hero,
+    .product-info,
+    .latest-entries,
+    .adventures {
+        margin-bottom: $base__space-unit * 3;
+    }
 
-        .do-container:hover {
-        	border-color: #d99054;
+    .shop {
+        text-align: center;
+        @include container();
+        margin-bottom: 3rem;
+    }
+
+    h1 {
+        font-size: 38.4px;
+        font-size: 2.4rem;
+        font-weight: 400;
+        margin-bottom: 3.75rem;
+        text-align: center;
+    }
+
+    .product-type-blocks {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        height: 295px;
+
+        .stuff-container {
+            border: 1px solid #e1e1e1;
+            border-top-width: 5px;
+            -ms-flex: 0 1 23.5%;
+            flex: 0 1 23.5%;
+            max-width: 23.5%;
+            padding: .75rem;
+
+            .do-button {
+                bottom: 0;
+            }
+
+            .do-container:hover {
+                border-color: #d99054;
+            }
         }
+    }
+
+    .journal {
+
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        @include container();
+
+        h1 {
+            text-align: center;
+            width: 100%;
+        }
+
+        .journal-wrapper {
+            width: 32%;
+            border: 1px solid #e1e1e1;
+
+            .journal-home {
+                background-color: #e1e1e1;
+            }
+
+        }
+
+        .journal-info {
+            padding: .75rem;
+
+            p.entry-meta {
+                font-size: .7rem;
+                font-family: 'Merriweather Web', serif;
+                margin-bottom: 0;
+            }
+
+            .entry-title {
+                color: #248a83;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .adventures {
+        @include container;
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 2fr;
+            grid-gap: 20px 20px;
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+            width: 100%;
+
+            li {
+                line-height: 1;
+                overflow: hidden;
+                position: relative;
+                width: 100%;
+
+                &::before {
+                    content: ' ';
+                    display: inline-block;
+                    width: 1px;
+                    height: 0;
+                }
+
+                &:first-child {
+                    grid-column: 1 / span 2;
+                    grid-row: 1 / span 2;
+
+                    &::before {
+                        padding-bottom: calc(100% - 24px);
+                    }
+
+                    .adventure-info {
+                        h3 {
+                            @include font-size(3);
+                        }
+                    }
+
+                }
+
+                &:nth-child(2) {
+                    grid-column: 3 / span 2;
+                    grid-row: 1 / span 1;
+
+                    &::before {
+                        padding-bottom: calc(50% - 24px);
+                    }
+
+                    .adventure-info {
+                        h3 {
+                            @include font-size(2.2);
+                        }
+                    }
+                }
+
+                &:nth-child(3),
+                &:last-child {
+                    &::before {
+                        padding-bottom: calc(50% / 3)
+                    }
+
+                    .adventure-info {
+                        h3 {
+                            @include font-size(1.5);
+                        }
+                    }
+                }
+
+            }
+
+            .adventure-wrapper {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 100;
+
+                &:after {
+                    background: rgba(0, 0, 0, 0.35);
+                    content: '';
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    z-index: 100;
+                }
+
+                img {
+                    left: 50%;
+                    max-height: 620px;
+                    max-width: none;
+                    position: absolute;
+                    top: 75%;
+                    transform: translate(-50%, -75%);
+                    width: auto;
+                }
+            }
+
+            .adventure-info {
+                margin: $base__space-unit;
+                position: absolute;
+                z-index: 200;
+
+                h3 {
+                    font-family: $font__main;
+                    font-weight: normal;
+                    margin-top: 24px;
+                    text-transform: none;
+                    color: #fff;
+
+                    a {
+                        color: white;
+
+                        &:hover {
+                            color: $color__yellow;
+                        }
+                    }
+                }
+            }
+
+            .see-more {
+                margin-top: $base__space-unit * 1.5;
+
+                .btn {
+                    @include font-size(1.2);
+                }
+            }
+        }
+    }
+}
+
+
+.page-id-16 {
+
+    .site-content {
+        width: 100vw;
+    }
+
+    .post-16 {
+
+
+
+        .site-main {
+            position: absolute;
+        }
+
+        .entry-content {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-image-header {
+            height: 100vh;
+            color: #fff;
+            margin-bottom: 3rem;
+        }
+
+
+        .entry-content {
+            :not(header):not(h1) {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 800px;
+                font-family: $font__main;
+            }
+
+            h3 {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.blog {
+
+    .site-content {
+        @include container();
+        display: flex;
+    }
+
+    .content-area-home {
+        border-right: 1px solid #e1e1e1;
+        padding-right: 5%;
+        width: 73%;
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .entry-header {
+        top: 0;
+        height: auto;
+        width: 100%;
+        position: relative;
+
+        .entry-title {
+            background-color: #248a83;
+            font-size: 2rem;
+            padding: 0.5em 1em;
+            position: absolute;
+            max-width: 75%;
+            top: 0;
+
+            a {
+                color: #fff;
+            }
+        }
+
+        .entry-meta {
+            background-color: #248a83;
+            bottom: 7px;
+            color: #fff;
+            display: inline-block;
+            font-family: 'Novecento Sans Web', sans-serif;
+            padding: 1.00005rem 1.5rem;
+            position: absolute;
+            right: 0;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.site-info {
+    a {
+        color: #fff;
+    }
 }

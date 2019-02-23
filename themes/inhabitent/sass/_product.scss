@@ -1,0 +1,113 @@
+.post-type-archive-product .content-area {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    @include container();
+}
+
+.post-type-archive-product .page-header,
+.tax-product-type .page-header {
+    border-bottom: 1px dashed #c8c8c8;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.product-type-list {
+    display: flex;
+    font-family: $font__code;
+    @include font-size(1.2);
+    justify-content: center;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    text-transform: uppercase;
+
+    li {
+        margin: 0 $base__space-unit;
+        flex-flow: row wrap;
+        color: $color__green;
+    }
+}
+
+.single-product .content-area {
+    padding-right: 5%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+}
+
+.single-product .hentry {
+    display: flex;
+    justify-content: space-between;
+
+    .product-image-wrapper,
+    .product-content-wrapper {
+        width: 48%;
+    }
+
+    .entry-title {
+        color: #d99054;
+    }
+
+    .entry-content {
+        margin-top: 0;
+    }
+
+    .price-tag {
+        font-family: 'Novovento Sans Web', Sans-serif;
+        @include font-size(1.8);
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+}
+
+.post-type-archive {
+    .site-content {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        .product-grid-item {
+            border: 1px solid #e1e1e1;
+        }
+
+        .product-grid-item .thumbnail-wrapper {
+            background-color: #e1e1e1;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background-size: contain;
+        }
+
+        .product-grid-item .product-info {
+            font-size: .6rem;
+            padding: .75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .product-title {
+                background: #fff;
+                font-size: 1rem;
+                font-weight: 400;
+                font-family: Merriweather Web, serif;
+                letter-spacing: 0;
+                line-height: 1.75;
+                padding-right: .25rem;
+                text-transform: none;
+            }
+        }
+    }
+}
+
+
+
+.social-buttons {
+    margin: 1.5rem 0;
+}

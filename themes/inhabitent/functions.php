@@ -77,6 +77,37 @@ function red_starter_widgets_init() {
 }
 add_action('widgets_init', 'red_starter_widgets_init');
 
+/* Registering Private Taxonomy to Adventures */
+add_action( 'init', 'create_private_book_tax' );
+
+function create_private_book_tax() {
+    register_taxonomy(
+        'genre',
+        'book',
+        array(
+            'label' => __( 'Adventures'),
+            'public' => false,
+            'rewrite' => false,
+            'hierarchical' => true,
+        )
+    );
+}
+
+/* Register Glutenburg Block Template */
+
+function myplugin_register_desc_post_type() {
+	$args = array(
+		'public' => true,
+		'label' => 'description',
+		'show_in_rest' => true,
+		'template' => array(
+			'core/paragraph', array(
+				'placeholder' => 'Add Description...')),
+	);
+	register_post_type('description', $args);
+}
+add_action('init', 'myplugin_register_desc_post_type');
+
 /**
  * Filter the stylesheet_uri to output the minified CSS file.
  */
@@ -104,62 +135,6 @@ function red_starter_scripts() {
 	}
 }
 add_action('wp_enqueue_scripts', 'red_starter_scripts');
-
-function create_post_type() {
-	register_post_type('acme_product',
-		array(
-			'labels' => array(
-				'name' => __('Shop Stuff'),
-				'singular_name' => __('Shop Stuff'),
-			),
-			'public' => true,
-			'has_archive' => true,
-		)
-	);
-}
-add_action('init', 'create_post_type');
-
-function create_post_type2() {
-	register_post_type('acme_magazines',
-		array(
-			'labels' => array(
-				'name' => __('Inhabitent Journal'),
-				'singular_name' => __('Inhabitent Journal'),
-			),
-			'public' => true,
-			'has_archive' => true,
-		)
-	);
-}
-add_action('init', 'create_post_type2');
-
-add_action('init', 'create_book_tax');
-
-function create_book_tax() {
-	register_taxonomy(
-		'Do Stuff',
-		'acme_product',
-		array(
-			'label' => __('Do Stuff'),
-			'rewrite' => array('slug' => 'Do Stuff'),
-			'hierarchical' => true,
-		)
-	);
-}
-
-add_action('init', 'create_book_tax2');
-
-function create_book_tax2() {
-	register_taxonomy(
-		'Eat Stuff',
-		'acme_product',
-		array(
-			'label' => __('Eat Stuff'),
-			'rewrite' => array('slug' => 'Eat Stuff'),
-			'hierarchical' => true,
-		)
-	);
-}
 
 /**
  * Register meta boxes.
