@@ -33,6 +33,17 @@
 		margin: 3rem 0;
 		padding-right: $base__space-unit;
 		width: 25%;
+
+		&:nth-child(3) {
+			width: 50%;
+		}
+		.text-logo {
+		width: 50%;
+		float: right;
+		margin: 3rem 0;
+		padding-right: $base__space-unit;
+		background: url(../../images/logos/inhabitent-logo-text.svg) no-repeat;
+	}
 }
 
 .site-info {

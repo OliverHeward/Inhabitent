@@ -53,6 +53,10 @@
         text-align: center;
         height: 295px;
 
+        .stuff-svg {
+            width: 70px;
+        }
+
         .stuff-container {
             border: 1px solid #e1e1e1;
             border-top-width: 5px;
@@ -60,6 +64,10 @@
             flex: 0 1 23.5%;
             max-width: 23.5%;
             padding: .75rem;
+
+            &:hover {
+                border-color: $color__orange;
+            }
 
             .do-button {
                 bottom: 0;
@@ -88,6 +96,10 @@
             width: 32%;
             border: 1px solid #e1e1e1;
 
+            .journal-img {
+                height: 265px;
+            }
+
             .journal-home {
                 background-color: #e1e1e1;
             }
@@ -96,6 +108,7 @@
 
         .journal-info {
             padding: .75rem;
+            height: 170px;
 
             p.entry-meta {
                 font-size: .7rem;
@@ -122,6 +135,7 @@
             margin-left: 0;
             padding-left: 0;
             width: 100%;
+            margin-bottom: 30px;
 
             li {
                 line-height: 1;
@@ -190,6 +204,7 @@
                 top: 0;
                 z-index: 100;
 
+
                 &:after {
                     background: rgba(0, 0, 0, 0.35);
                     content: '';
@@ -223,6 +238,7 @@
                     margin-top: 24px;
                     text-transform: none;
                     color: #fff;
+                    line-height: 1.2;
 
                     a {
                         color: white;
@@ -233,14 +249,11 @@
                     }
                 }
             }
+        }
 
-            .see-more {
-                margin-top: $base__space-unit * 1.5;
-
-                .btn {
-                    @include font-size(1.2);
-                }
-            }
+        .green-btn {
+            margin-top: $base__space-unit * 1.5;
+            @include font-size(1.2);
         }
     }
 }
@@ -253,7 +266,9 @@
     }
 
     .post-16 {
-
+        h1 {
+            font-size: 3rem;
+        }
 
 
         .site-main {
@@ -273,7 +288,7 @@
 
 
         .entry-content {
-            :not(header):not(h1) {
+            :not(header):not(h1):not(h3) {
                 margin-left: auto;
                 margin-right: auto;
                 max-width: 800px;
@@ -282,6 +297,7 @@
 
             h3 {
                 text-align: center;
+                font-size: 2.1rem;
             }
         }
     }
@@ -314,9 +330,12 @@
 
         .entry-title {
             background-color: #248a83;
+            color: #fff;
             font-size: 2rem;
-            padding: 0.5em 1em;
+            left: 0;
+            padding: .5rem 1.25rem;
             position: absolute;
+            margin-top: 2.25rem;
             max-width: 75%;
             top: 0;
 
@@ -327,11 +346,11 @@
 
         .entry-meta {
             background-color: #248a83;
-            bottom: 7px;
+            bottom: 8px;
             color: #fff;
             display: inline-block;
-            font-family: 'Novecento Sans Web', sans-serif;
-            padding: 1.00005rem 1.5rem;
+            font-family: 'Merriweather Web', sans-serif;
+            padding: .4rem 1.5rem;
             position: absolute;
             right: 0;
             text-transform: uppercase;
@@ -342,5 +361,77 @@
 .site-info {
     a {
         color: #fff;
+    }
+}
+
+.single-adventures {
+
+    .entry-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+        margin-top: 50px;
+
+        .entry-title {
+            margin-top: 3rem;
+        }
+
+        .entry-meta {
+            font-family: 'Novecento Sans Web', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            padding-bottom: 20px;
+        }
+
+        .entry-content {
+            width: 800px;
+        }
+    }
+
+}
+
+.page-id-19 {
+
+    .site-content {
+        display: flex;
+        @include container();
+    }
+
+    .content-area {
+        padding-top: 6rem;
+        border-right: 1px solid #e1e1e1;
+        padding-right: 5%;
+        padding-bottom: 3rem;
+        width: 73%;
+
+        h2 {
+            font-size: 2.1rem;
+            line-height: 1.25;
+        }
+    }
+}
+
+.error404 {
+    .site-content {
+        @include container();
+        display: flex;
+
+        .content-area {
+            border-right: 1px solid #e1e1e1;
+            padding-right: 5%;
+            width: 73%;
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+
+            .page-content {
+                .404-search {
+                    width: 250px;
+
+                    .search-form {
+                        width: 250px;
+                    }
+                }
+            }
+        }
     }
 }

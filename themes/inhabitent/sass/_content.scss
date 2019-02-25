@@ -39,33 +39,39 @@ body {
         height: auto;
         width: 100%;
         position: relative;
-    }
 
-    .entry-title {
-        background-color: #248a83;
-        color: #fff;
-        font-size: 2rem;
-        padding: 0.5em 1em;
-        position: absolute;
-        max-width: 75%;
-        top: 0;
-    }
+        .entry-title {
+            background-color: #248a83;
+            color: #fff;
+            font-size: 2rem;
+            left: 0;
+            padding: .5rem 1.25rem;
+            position: absolute;
+            margin-top: 2.25rem;
+            max-width: 75%;
+            top: 0;
 
-    .entry-meta {
-        background-color: #248a83;
-        bottom: 7px;
-        color: #fff;
-        display: inline-block;
-        font-family: 'Novecento Sans Web', sans-serif;
-        padding: 1.00005rem 1.5rem;
-        position: absolute;
-        right: 0;
-        text-transform: uppercase;
+            a {
+                color: #fff;
+            }
+        }
+
+        .entry-meta {
+            background-color: #248a83;
+            bottom: 8px;
+            color: #fff;
+            display: inline-block;
+            font-family: 'Merriweather Web', sans-serif;
+            padding: .4rem 1.5rem;
+            position: absolute;
+            right: 0;
+            text-transform: uppercase;
+        }
     }
 }
 
 .hentry {
-    margin: 0 0 $base__space-unit;
+    margin: 0 0 4.5rem;
 }
 
 .updated:not(.published) {
@@ -101,15 +107,86 @@ body {
     display: none;
 }
 
-.widget {
-    width: 27%;
-    padding-left: 6rem;
+.widget-area {
+    padding-left: 3rem;
     padding-top: 6rem;
+
+    .widget {
+        margin: 0 0 3rem;
+
+        h2 {
+            font-size: 1.3rem;
+            font-family: 'Novecento Sans Web', sans-serif;
+        }
+    }
 }
+
 /* Comments */
+
 
 .comment-content a {
     word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+.comments-title {
+    margin-bottom: 0;
+}
+
+.comment-list {
+    margin-left: 0;
+    padding-left: 0;
+
+    & > li {
+        border-bottom: $color__background-ins;
+    }
+}
+
+.children li {
+    border-top: $color__background-ins;
+}
+
+.comment {
+    padding-top: $base__space-unit;
+
+    article {
+        padding-bottom: $base__space-unit;
+    }
+}
+
+.comment-body {
+    display: flex;
+
+    p {
+        margin-bottom: $base__space-unit / 2;
+    }
+}
+
+.comment-author-avatar {
+    border-radius: 50%;
+    height: 64px;
+    margin-right: $base__space-unit;
+    overflow: hidden;
+    width: 64px;
+}
+
+.comment-author {
+    cite {
+        font-style: normal;
+        font-weight: bold;
+    }
+}
+
+.comment-metadata {
+    color: $color__med-grey;
+    margin-bottom: $base__space-unit / 2;
+}
+
+.required {
+    color: $color__orange;
 }
 
 .bypostauthor {

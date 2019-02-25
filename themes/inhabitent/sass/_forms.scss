@@ -9,49 +9,56 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background: $color__green;
-	border: none;
-	border-radius: 0;
-	color: white;
-	cursor: pointer;
-	font-family: $font__code;
-	@include font-size(.9);
-	line-height: 1;
-	padding: ($base__space-unit / 2) $base__space-unit;
-	text-decoration: none;
-	text-transform: uppercase;
+    background: $color__green;
+    border: none;
+    border-radius: 0;
+    color: white;
+    cursor: pointer;
+    font-family: $font__code;
+    @include font-size(.9);
+    line-height: 1;
+    padding: ($base__space-unit / 2) $base__space-unit;
+    text-decoration: none;
+    text-transform: uppercase;
 
-	&:hover,
-	&:active,
-	&:focus {
-		background: darken($color__green, 10%);
-		color: white;
-	}
+    &:hover,
+    &:active,
+    &:focus {
+        background: darken($color__green, 10%);
+        color: white;
+    }
 }
 
 .black-btn {
-	@extend .btn;
-	background-color: transparent;
-	border: 1px solid black;
-	color: black;
+    @extend .btn;
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
 }
 
 .white-btn {
-	@extend .btn;
-	background-color: transparent;
-	border: 1px solid white;
-	color: white;
+    @extend .btn;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.green-btn {
+    @extend .btn;
+    background-color: $color__green;
+    color: white;
 }
 
 .black-btn,
 .white-btn {
-	&:hover,
-	&:active,
-	&:focus {
-		background-color: $color__green;
-		border: 1px solid $color__green;
-		color: white;
-	}
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: $color__green;
+        border: 1px solid $color__green;
+        color: white;
+    }
 }
 
 
@@ -63,13 +70,13 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+    color: #666;
+    border: 1px solid #e1e1e1;
+    background-color: #f4f4f4;
 
-	&:focus {
-		color: #111;
-	}
+    &:focus {
+        color: #111;
+    }
 }
 
 input[type="text"],
@@ -77,11 +84,29 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
+    padding: 3px;
 }
 
 textarea {
-	padding-left: 3px;
-	width: 100%;
+    padding-left: 3px;
+    width: 100%;
 }
 
+form br {
+    display: none;
+}
+
+label {
+    color: #2f1339;
+    display: block;
+    font-family: 'Novecento Sans Web',sans-serif;
+    font-size: 17.6px;
+    font-size: 1.1rem;
+    margin-bottom: .2rem;
+    text-transform: uppercase;
+}
+
+.wpfc7-form-control-wrap, .contact-form-message {
+    height: 300px;
+    width: 100%;
+}

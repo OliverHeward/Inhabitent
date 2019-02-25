@@ -12,8 +12,11 @@
 			<footer id="colophon" class="site-footer" role="contentinfo">
 				<div class="footer-blocks container">
 					<?php dynamic_sidebar('footer-1');?>
+				<div class="footer-block-item">
+					<div class="text-logo">
+					</div>
 				</div>
-
+				</div>
 				<div class="site-info">
 					<a href="<?php echo esc_url('https://wordpress.org/'); ?>"><?php printf(esc_html('COPYRIGHT @ Inhabitent %s'), '');?></a>
 				</div><!-- .site-info -->

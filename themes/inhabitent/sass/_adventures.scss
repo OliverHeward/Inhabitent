@@ -1,0 +1,97 @@
+/*--------------------------------------------------------------
+# Adventures
+--------------------------------------------------------------*/
+
+/* Adventure Post Type Archive */
+
+.post-type-archive-adventures {
+    .site-main {
+        .page-header {
+            margin-top: $base__space-unit * 2;
+            padding-bottom: $base__space-unit;
+            text-align: center;
+        }
+    }
+}
+
+.adventure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $base__space-unit;
+    margin-bottom: $base__space-unit * 3;
+    @include container();
+    list-style: none;
+}
+
+.adventure-grid-item {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        float: left;
+        padding-top: 100%;
+    }
+
+    .adventure-grid-item {
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        &:after {
+             background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.4) 100%),
+            #969696;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+    }
+
+    img {
+        background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.4) 100%),
+            #969696;
+        left: 50%;
+        max-height: 548px;
+        max-width: 700px;
+        width: 140%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+    }
+
+    .adventure-info {
+        margin: 2.5rem $base__space-unit;
+        position: absolute;
+        z-index: 200;
+    }
+
+    .adventure-title {
+        font-family: $font__main;
+        @include font-size(2.9);
+        font-weight: normal;
+        margin-bottom: $base__space-unit * 2.5;
+        text-transform: none;
+        line-height: 1.2;
+
+        a {
+            color: white;
+
+            &:hover {
+                color: $color__yellow;
+            }
+        }
+    }
+}

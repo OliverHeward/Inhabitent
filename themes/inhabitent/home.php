@@ -39,7 +39,7 @@ get_header();?>
 	<div class="entry-content">
 		<?php the_excerpt();?>
 
-		<button class="black-btn">READ MORE</button>
+		<?php echo '<a class="black-btn" href="'.get_the_permalink().'">READ MORE →</a>'; ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
 

@@ -7,11 +7,13 @@
 
 get_header();?>
 
+
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php while (have_posts()): the_post();?>
 						<article id="post-<?php the_ID();?>" <?php post_class();?>>
-						<header class="entry-header">
+						<header class="entry-header container">
 
 
 
@@ -34,8 +36,27 @@ get_header();?>
 	));
 	?>
 						<?php endwhile;?>
+						<div class="social-buttons">
+			<button type="button" class="black-btn">
+				<i class="fab fa-facebook-f"> Like</i>
+			</button>
+			<button type="button" class="black-btn">
+				<i class="fab fa-twitter"> Tweet</i>
+			</button>
+			<button type="button" class="black-btn">
+				<i class="fab fa-pinterest"> Pin</i>
+			</button>
+		</div>
+
 			</div>
 		</article>
+				<div class="comments">
+			<?php
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
+            ?>
+		</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

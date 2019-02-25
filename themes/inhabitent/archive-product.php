@@ -34,12 +34,14 @@ foreach ($terms as $term) {?>
 			<?php /* Start the Loop */?>
 			<?php while (have_posts()): the_post();?>
 								<div class="product-grid-item">
+									<a href="<?php echo the_permalink() ?>">
 								<div class="thumbnail-wrapper">
 
 								<?php if (has_post_thumbnail()): ?>
 								<?php the_post_thumbnail('large');?>
 								<?php endif;?>
 				</div>
+			</a>
 				<div class="product-info">
 				<?php the_title(sprintf('<h2 class="product-title">'), '</h2>');?>
 				<span class="product-price">

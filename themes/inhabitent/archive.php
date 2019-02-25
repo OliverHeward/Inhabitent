@@ -5,39 +5,40 @@
  * @package RED_Starter_Theme
  */
 
-get_header(); ?>
+get_header();?>
+<div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+        <?php if (have_posts()): ?>
+        <header class="page-header">
+            <h1 class="entry-title">
+                Latest Adventures
+            </h1>
+        </header>
+        <!-- .page-header -->
+        <div class="adventure-grid">
+            <?php /* Start the Loop */?>
+            <?php $posts_array = get_posts(
+				array(
+					'posts_per_page' => 4,
+					'post_type' => 'adventures',
+					'post_status' => 'publish',
+				)
+			); 
+foreach ($posts_array as $post) { ?>
+            <div class="adventure-grid-item">
+                <?php if (has_post_thumbnail()):?>
+                <?php the_post_thumbnail('full');?>
+                <?php endif; ?>
+                <div class="adventure-info">
+                    <?php the_title(sprintf('<h3 class="adventure-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>');?>
+                    <?php echo '<a class="white-btn" href="'.get_the_permalink().'">Read More</a>'; ?>
+                </div>
+            </div>
+        <?php } ?>
+        <?php else: ?>
+                    <?php endif;?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					get_template_part( 'template-parts/content' );
-				?>
-
-			<?php endwhile; ?>
-
-			<?php the_posts_navigation(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-		<?php endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+        </div>
+    </main><!-- #main -->
+</div><!-- #primary -->
+<?php get_footer();?>

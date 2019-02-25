@@ -20,7 +20,9 @@ get_header(); ?>
 				<div class="page-content">
 					<p><?php echo esc_html( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?' ); ?></p>
 
+					<div class="404-search">
 					<?php get_search_form(); ?>
+				</div>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
@@ -51,5 +53,10 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+<div class="sidebar">
+<?php get_sidebar();?>
+</div>
+
 
 <?php get_footer(); ?>
