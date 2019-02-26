@@ -8,6 +8,7 @@
 .tax-product-type .page-header,
 .post-type-archive .page-header, .tax-product_type .page-header {
     border-bottom: 1px dashed #c8c8c8;
+    padding-bottom: 2rem;
     margin-bottom: 3rem;
     text-align: center;
 }
@@ -123,7 +124,7 @@
     .site-content {
         margin-top: 7rem;
         @include container();
-
+        margin-bottom: 4rem;
         header {
 
         }

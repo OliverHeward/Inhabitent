@@ -9,20 +9,12 @@ get_header();?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
         <?php if (have_posts()): ?>
+        	<?php $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy') ) ; ?>
         <header class="page-header">
             <h1 class="entry-title">
-                <?php 
-$categories = get_the_category( get_the_ID() );
-if( $categories ){
-    //display all the top-level categories first
-foreach ($categories as $cat) {
-	if (!$term->parent) {
-		array_push($categories, $term->name);
-	}
-}
-$result = array_unique($categories);
-print_r($result);
-?>
+               <?php echo $term->name; ?></h1>
+               <p><?php the_archive_description(); ?> </p>
+           </header>
 <div class="grid-container">
 
 			<?php /* Start the Loop */?>

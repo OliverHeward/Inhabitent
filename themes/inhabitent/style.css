@@ -628,7 +628,22 @@ a {
 .main-navigation {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .main-navigation .fa-search {
+    color: #248a83;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 1rem; }
 
 .site-header.reverse {
   position: absolute;
@@ -661,6 +676,48 @@ a {
     color: #fff; }
     .site-header.reverse .main-navigation a:hover {
       color: #f0e4d1; }
+  .site-header.reverse .fa-search {
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 1rem; }
+
+.header-search {
+  line-height: 1;
+  padding-left: 1.5rem; }
+  .header-search fieldset {
+    border: 0;
+    padding: 0;
+    padding-bottom: .75rem;
+    margin: 0; }
+  .header-search .search-toggle {
+    color: #248a83;
+    float: left;
+    padding-top: .33rem; }
+  .header-search .fas {
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .header-search label {
+    display: none;
+    float: left;
+    margin: 0; }
+  .header-search input[type=search] {
+    border: 0;
+    background: transparent;
+    font-family: Novecento Sans Web, sans-serif;
+    margin-left: .75rem;
+    padding: 0 .3rem;
+    text-transform: uppercase; }
 
 .site-footer {
   background: url(../../images/dark-wood@2x.png);
@@ -694,13 +751,13 @@ a {
   padding-right: 1.5rem;
   width: 25%; }
   .footer-block-item:nth-child(3) {
-    width: 50%; }
-  .footer-block-item .text-logo {
     width: 50%;
-    float: right;
-    margin: 3rem 0;
-    padding-right: 1.5rem;
-    background: url(../../images/logos/inhabitent-logo-text.svg) no-repeat; }
+    text-align: right; }
+    .footer-block-item:nth-child(3) .text-logo {
+      background: url(../../images/logos/inhabitent-logo-text.svg) no-repeat;
+      background-size: contain;
+      height: 100%;
+      max-width: 50%; }
 
 .site-info {
   display: -webkit-box;
@@ -1409,6 +1466,7 @@ object {
 .tax-product-type .page-header,
 .post-type-archive .page-header, .tax-product_type .page-header {
   border-bottom: 1px dashed #c8c8c8;
+  padding-bottom: 2rem;
   margin-bottom: 3rem;
   text-align: center; }
 
@@ -1515,7 +1573,8 @@ object {
   margin-top: 7rem;
   margin-left: auto;
   margin-right: auto;
-  width: 1120px; }
+  width: 1120px;
+  margin-bottom: 4rem; }
 
 .tax-product_type .grid-container {
   display: grid;

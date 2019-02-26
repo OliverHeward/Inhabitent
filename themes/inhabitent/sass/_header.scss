@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 .site-header {
-	background-color: hsla(0,0%,100%,.85);
+    background-color: hsla(0, 0%, 100%, .85);
     border-bottom: 1px solid #e1e1e1;
     height: 50px;
     padding: .5rem 0;
@@ -13,21 +13,31 @@
     display: flex;
 
     .container {
-    	margin: 0 auto;
-    	padding: 0 auto;
-    	width: 1120px;
-    	display: flex;
-    	align-items: center;
-    	justify-content: space-between;
+        margin: 0 auto;
+        padding: 0 auto;
+        width: 1120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .logo {
-    	height: 33px;
-    	width: 50px;
+        height: 33px;
+        width: 50px;
     }
 }
-    .main-navigation {
-    	display: flex;
+
+.main-navigation {
+    display: flex;
+    justify-content: center;
+
+    .fa-search {
+        color: $color__green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 1rem;
+    }
 }
 
 .site-header.reverse {
@@ -45,7 +55,7 @@
         padding: 0 auto;
         width: 1120px;
         display: flex;
-        align-items:center;
+        align-items: center;
         justify-content: space-between;
     }
 
@@ -60,5 +70,55 @@
         &:hover {
             color: $color__yellow;
         }
+    }
+
+    .fa-search {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 1rem;
+    }
+}
+
+.header-search {
+    line-height: 1;
+    padding-left: 1.5rem;
+
+
+    fieldset {
+        border: 0;
+        padding: 0;
+        padding-bottom: .75rem;
+        margin: 0;
+    }
+
+    .search-toggle {
+        color: #248a83;
+        float: left;
+        padding-top: .33rem;
+    }
+
+    .fas {
+        display: inline-block;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    label {
+        display: none;
+        float: left;
+        margin: 0;
+    }
+
+    input[type=search] {
+        border: 0;
+        background: transparent;
+        font-family: Novecento Sans Web, sans-serif;
+        margin-left: .75rem;
+        padding: 0 .3rem;
+        text-transform: uppercase;
     }
 }
