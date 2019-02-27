@@ -10,7 +10,7 @@
 
     .journal,
     .shop {
-        margin-bottom: 3rem;
+        margin-bottom: 3.5rem;
     }
 
     section.hero {
@@ -434,4 +434,45 @@
             }
         }
     }
+}
+
+.search-results, .search-no-results {
+    .site-content {
+        @include container();
+        display: flex;
+    }
+
+    .content-area {
+        border-right: 1px solid #e1e1e1;
+        padding-right: 5%;
+        width: 73%;
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+
+        .page-title {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e1e1e1;
+        }
+    }
+
+    .search-pagination {
+
+        border-top: 1px solid #e1e1e1;
+        font-family: 'Novecento Sans Web', sans-serif;
+        padding: 1.5rem 0;
+        text-transform: uppercase;
+
+        .page-numbers {
+            background-color: #248a83;
+            color: #fff;
+            display: inline-block;
+            line-height: 1;
+            padding: .5rem .75rem;
+            margin-right: .25rem;
+            text-align: center;
+        }
+
+        .prev {}
+    }
+
 }

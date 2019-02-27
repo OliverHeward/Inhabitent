@@ -643,7 +643,7 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-left: 1rem; }
+    padding-left: .7rem; }
 
 .site-header.reverse {
   position: absolute;
@@ -686,38 +686,38 @@ a {
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center;
-    padding-left: 1rem; }
+            align-items: center; }
+  .site-header.reverse .header-search input[type="search"] {
+    color: white; }
+    .site-header.reverse .header-search input[type="search"]::-webkit-input-placeholder {
+      color: #f0e4d1 !important; }
+
+.search-toggle {
+  display: none; }
 
 .header-search {
-  line-height: 1;
-  padding-left: 1.5rem; }
+  line-height: 1; }
   .header-search fieldset {
-    border: 0;
+    border: 1px solid transparent;
     padding: 0;
-    padding-bottom: .75rem;
-    margin: 0; }
+    margin-top: .5rem; }
   .header-search .search-toggle {
     color: #248a83;
     float: left;
-    padding-top: .33rem; }
-  .header-search .fas {
-    display: inline-block;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
+    padding-top: .5rem; }
   .header-search label {
     display: none;
     float: left;
     margin: 0; }
-  .header-search input[type=search] {
+  .header-search input[type="search"] {
     border: 0;
     background: transparent;
-    font-family: Novecento Sans Web, sans-serif;
-    margin-left: .75rem;
-    padding: 0 .3rem;
+    font-family: "Novecento Sans Web";
+    margin-left: 0.75rem;
+    padding: 0 0.3rem;
     text-transform: uppercase; }
+    .header-search input[type="search"]:focus {
+      outline: none; }
 
 .site-footer {
   background: url(../../images/dark-wood@2x.png);
@@ -753,11 +753,8 @@ a {
   .footer-block-item:nth-child(3) {
     width: 50%;
     text-align: right; }
-    .footer-block-item:nth-child(3) .text-logo {
-      background: url(../../images/logos/inhabitent-logo-text.svg) no-repeat;
-      background-size: contain;
-      height: 100%;
-      max-width: 50%; }
+    .footer-block-item:nth-child(3) img {
+      width: 50%; }
 
 .site-info {
   display: -webkit-box;
@@ -1063,7 +1060,7 @@ object {
 /* Front page */
 .page-id-44 .journal,
 .page-id-44 .shop {
-  margin-bottom: 3rem; }
+  margin-bottom: 3.5rem; }
 
 .page-id-44 section.hero {
   height: 100vh;
@@ -1382,23 +1379,56 @@ object {
       .error404 .site-content .content-area .page-content .404-search .search-form {
         width: 250px; }
 
+.search-results .site-content, .search-no-results .site-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.search-results .content-area, .search-no-results .content-area {
+  border-right: 1px solid #e1e1e1;
+  padding-right: 5%;
+  width: 73%;
+  padding-top: 6rem;
+  padding-bottom: 3rem; }
+  .search-results .content-area .page-title, .search-no-results .content-area .page-title {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e1e1e1; }
+
+.search-results .search-pagination, .search-no-results .search-pagination {
+  border-top: 1px solid #e1e1e1;
+  font-family: 'Novecento Sans Web', sans-serif;
+  padding: 1.5rem 0;
+  text-transform: uppercase; }
+  .search-results .search-pagination .page-numbers, .search-no-results .search-pagination .page-numbers {
+    background-color: #248a83;
+    color: #fff;
+    display: inline-block;
+    line-height: 1;
+    padding: .5rem .75rem;
+    margin-right: .25rem;
+    text-align: center; }
+
 /*--------------------------------------------------------------
 # Adventures
 --------------------------------------------------------------*/
 /* Adventure Post Type Archive */
-.post-type-archive-adventures .site-main .page-header {
-  margin-top: 3rem;
-  padding-bottom: 1.5rem;
-  text-align: center; }
+.post-type-archive-adventures .site-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1120px; }
+  .post-type-archive-adventures .site-content .page-header {
+    margin-top: 3rem;
+    padding-bottom: 1.5rem;
+    text-align: center; }
 
 .adventure-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.5rem;
   margin-bottom: 4.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1120px;
   list-style: none; }
 
 .adventure-grid-item {

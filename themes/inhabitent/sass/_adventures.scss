@@ -5,7 +5,8 @@
 /* Adventure Post Type Archive */
 
 .post-type-archive-adventures {
-    .site-main {
+    .site-content {
+        @include container();
         .page-header {
             margin-top: $base__space-unit * 2;
             padding-bottom: $base__space-unit;
@@ -19,7 +20,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: $base__space-unit;
     margin-bottom: $base__space-unit * 3;
-    @include container();
     list-style: none;
 }
 

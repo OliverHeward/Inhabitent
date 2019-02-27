@@ -38,7 +38,7 @@ get_header();
             ?>
                   <?php foreach ( $terms as $term ) : ?>
                      <div class="stuff-container">
-                        <img class="stuff-svg" src="<?php echo get_template_directory_uri() . '/images/' . $term->slug; ?>.svg" alt="<?php echo $term->name; ?>" />
+                        <img class="stuff-svg"src="<?php echo get_template_directory_uri() . '/images/' . $term->slug; ?>.svg" alt="<?php echo $term->name; ?>" />
                         <p><?php echo $term->description; ?></p>
                         <p><a href="<?php echo get_term_link( $term ); ?>" class="btn"><?php echo $term->name; ?> Stuff</a></p>
                      </div>
@@ -68,9 +68,7 @@ foreach ($posts_array as $post) {?>
                         <?php red_starter_posted_on();?> /
                         <?php comments_number('0 Comments', '1 Comment', '% Comments');?>
                     </p>
-                    <h2 class="entry-title">
-                        <?php echo $post->post_name ?>
-                    </h2>
+                    <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
                     <?php echo '<a class="black-btn" href="'.get_the_permalink().'">Read Entry</a>'; ?>
                 </div>
             </div>

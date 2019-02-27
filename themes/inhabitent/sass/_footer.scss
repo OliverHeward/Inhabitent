@@ -37,13 +37,9 @@
 		&:nth-child(3) {
 			width: 50%;
 			text-align: right;
-
-			.text-logo {
-						background: url(../../images/logos/inhabitent-logo-text.svg) no-repeat;
-						background-size: contain;
-						height: 100%;
-						max-width: 50%;
-			}
+				img {
+					width: 50%;
+				}
 	}
 }
 
