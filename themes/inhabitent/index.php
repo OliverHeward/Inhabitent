@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file.
+ * The Index template file.
  *
  * @package RED_Starter_Theme
  */

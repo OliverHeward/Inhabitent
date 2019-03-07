@@ -51,7 +51,7 @@ add_action('after_setup_theme', 'red_starter_content_width', 0);
 
 /**
  * Register widget area.
- *
+ * Registering Sidebar and Footer 
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function red_starter_widgets_init() {

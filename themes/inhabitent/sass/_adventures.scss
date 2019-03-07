@@ -2,11 +2,14 @@
 # Adventures
 --------------------------------------------------------------*/
 
-/* Adventure Post Type Archive */
+/*--------------------------------------------------------------
+# Adventure Post Type Archive
+--------------------------------------------------------------*/
 
 .post-type-archive-adventures {
     .site-content {
         @include container();
+
         .page-header {
             margin-top: $base__space-unit * 2;
             padding-bottom: $base__space-unit;
@@ -42,10 +45,10 @@
         top: 0;
 
         &:after {
-             background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.4) 0%,
-            rgba(0, 0, 0, 0.4) 100%),
-            #969696;
+            background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.4) 0%,
+                rgba(0, 0, 0, 0.4) 100%),
+                #969696;
             content: '';
             height: 100%;
             left: 0;
@@ -94,4 +97,34 @@
             }
         }
     }
+}
+
+/*--------------------------------------------------------------
+# Single Adventure Page
+--------------------------------------------------------------*/
+
+.single-adventures {
+
+    .entry-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+        margin-top: 50px;
+
+        .entry-title {
+            margin-top: 3rem;
+        }
+
+        .entry-meta {
+            font-family: 'Novecento Sans Web', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            padding-bottom: 20px;
+        }
+
+        .entry-content {
+            width: 800px;
+        }
+    }
+
 }

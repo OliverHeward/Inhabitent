@@ -1,61 +1,79 @@
 <?php
-/**
- * The template for displaying archive pages.
- *
- * @package RED_Starter_Theme
- */
-
-get_header();?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php if (have_posts()): ?>
-
-			<header class="page-header">
-				<h1 class="entry-title">
-					Shop Stuff
-				</h1>
-
-				<ul class="product-type-list">
-<?php
-$terms = get_terms(array(
-	'taxonomy' => 'product_type',
-	'hide_empty' => false,
-));
-foreach ($terms as $term) {?>
-	<li> <?php echo $term->name; ?> </li> <?php
-}?>
-</ul>
-			</header><!-- .page-header -->
-
-<div class="grid-container">
-
-			<?php /* Start the Loop */?>
-			<?php while (have_posts()): the_post();?>
-								<div class="product-grid-item">
-									<a href="<?php echo the_permalink() ?>">
-								<div class="thumbnail-wrapper">
-
-								<?php if (has_post_thumbnail()): ?>
-								<?php the_post_thumbnail('large');?>
-								<?php endif;?>
-				</div>
-			</a>
-				<div class="product-info">
-				<?php the_title(sprintf('<h2 class="product-title">'), '</h2>');?>
-				<span class="product-price">
-					<?php echo CFS()->get('price'); ?>
-				</span>
-
-			</div>
+    /**
+     * The template for displaying Product Archive pages.
+     *
+     * @package RED_Starter_Theme
+     */
+    
+    get_header();?> <!-- Calling Header -->
+<!-- START OF SITE CONTENT -->
+<div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+        <!-- Start of Condition checking if have posts -->
+        <?php if (have_posts()): ?>
+        <!-- Start of Page Header -->
+        <header class="page-header">
+            <!-- Entry Title -->
+            <h1 class="entry-title">
+                Shop Stuff
+            </h1>
+            <!-- Start of Product Term List -->
+            <ul class="product-type-list">
+                <!-- PHP Object Retrieving Product Type Term (name) -->
+                <?php
+                    $terms = get_terms(array(
+                    	'taxonomy' => 'product_type',
+                    	'hide_empty' => false,
+                    ));
+                    foreach ($terms as $term) {?> <!-- Start of Foreach Loop -->
+                <!-- Start of List Echoing both Permalink & Term Name -->
+                <li><a href="<?php echo get_term_link( $term ); ?>"> <?php echo $term->name; ?> </a></li>
+                <?php
+                    }?>
+            </ul>
+            <!-- End of Product Term List -->
+        </header>
+        <!-- End of Page Header -->
+        <!-- Start of Product Grid -->
+        <div class="grid-container">
+            <!-- Start of the Loop -->
+            <?php while (have_posts()): the_post();?>
+            <!-- Start of Grid Items -->
+            <div class="product-grid-item">
+                <!-- Clickable Permalink for Product Image -->
+                <a href="<?php echo the_permalink() ?>">
+                    <!-- Start of Image Wrapper -->
+                    <div class="thumbnail-wrapper">
+                        <!-- Start of Conditional to check for WordPress Thumbnail -->
+                        <?php if (has_post_thumbnail()): ?>
+                        <?php the_post_thumbnail('large');?>
+                        <?php endif;?>
+                        <!-- End of Conditional -->
+                    </div>
+                    <!-- End of Image Wrapper -->
+                </a>
+                <!-- End of Permalink for Product Image --> 
+                <!-- Start of Product Info -->
+                <div class="product-info">
+                    <!-- Product Title -->
+                    <?php the_title(sprintf('<h2 class="product-title">'), '</h2>');?>
+                    <!-- Product Price -->
+                    <span class="product-price">
+                    <?php echo CFS()->get('price'); ?>
+                    </span>
+                    <!-- End of Product Price -->
+                </div>
+                <!-- End of Product Info -->
+            </div>
+            <!-- End of Grid Item -->
+            <?php endwhile;?> 
+            <!-- End While -->
+            <?php endif;?>
+            <!-- End If -->
+        </div>
+        <!-- End of Product Grid -->
+    </main>
+    <!-- End of Main -->
 </div>
-	<?php endwhile;?>
-
-
-		<?php endif;?>
-</div>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_footer();?>
+<!-- End of Primary -->
+<?php get_footer();?> <!-- Calling Footer -->

@@ -1,8 +1,10 @@
 /*--------------------------------------------------------------
-# Content
+# Content Style Sheet
 --------------------------------------------------------------*/
 
-/* Posts and pages */
+/*--------------------------------------------------------------
+# Posts and Pages #
+--------------------------------------------------------------*/
 
 body {
     display: flex;
@@ -17,6 +19,10 @@ body {
 .sticky {
     display: block;
 }
+
+/*--------------------------------------------------------------
+# Single Post
+--------------------------------------------------------------*/
 
 .single-post {
 
@@ -66,6 +72,10 @@ body {
             position: absolute;
             right: 0;
             text-transform: uppercase;
+
+            a {
+                color: #fff;
+            }
         }
     }
 }
@@ -107,6 +117,10 @@ body {
     display: none;
 }
 
+/*--------------------------------------------------------------
+# Widget Area
+--------------------------------------------------------------*/
+
 .widget-area {
     padding-left: 3rem;
     padding-top: 6rem;
@@ -118,10 +132,16 @@ body {
             font-size: 1.3rem;
             font-family: 'Novecento Sans Web', sans-serif;
         }
+
+        span.day-of-week {
+            font-weight: bolder;
+        }
     }
 }
 
-/* Comments */
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
 
 
 .comment-content a {
@@ -140,7 +160,7 @@ body {
     margin-left: 0;
     padding-left: 0;
 
-    & > li {
+    &>li {
         border-bottom: $color__background-ins;
     }
 }

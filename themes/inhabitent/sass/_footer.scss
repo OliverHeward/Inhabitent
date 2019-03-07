@@ -1,55 +1,59 @@
+/*--------------------------------------------------------------
+# Footer Style Sheet
+--------------------------------------------------------------*/
+
 .site-footer {
-	background: url(../../images/dark-wood@2x.png);
-	background-size: 512px 512px;
-	color: #fff;
+    background: url(../../images/dark-wood@2x.png);
+    background-size: 512px 512px;
+    color: #fff;
 }
 
 .footer-blocks {
-	display: flex;
-	@include container();
+    display: flex;
+    @include container();
 
-	h2 {
-		color: $color__orange;
-		@include font-size(1.2);
-		margin-bottom: $base__space-unit / 2;
-		text-transform: uppercase;
-	}
+    h2 {
+        color: $color__orange;
+        @include font-size(1.2);
+        margin-bottom: $base__space-unit / 2;
+        text-transform: uppercase;
+    }
 
-	p {
-		margin-bottom: $base__space-unit / 3;
-	}
+    p {
+        margin-bottom: $base__space-unit / 3;
+    }
 
-	i {
-		@include font-size(1.25);
-		margin-right: $base__space-unit / 3;
-	}
+    i {
+        @include font-size(1.25);
+        margin-right: $base__space-unit / 3;
+    }
 
-	.day-of-week {
-		font-weight: 700;
-	}
+    .day-of-week {
+        font-weight: 700;
+    }
 }
 
 .footer-block-item {
-		margin: 3rem 0;
-		padding-right: $base__space-unit;
-		width: 25%;
+    margin: 3rem 0;
+    padding-right: $base__space-unit;
+    width: 25%;
 
-		&:nth-child(3) {
-			width: 50%;
-			text-align: right;
-				img {
-					width: 50%;
-				}
-	}
+    &:nth-child(3) {
+        width: 50%;
+        text-align: right;
+
+        img {
+            width: 50%;
+        }
+    }
 }
 
 .site-info {
-	display: flex;
-	justify-content: center;
-   font-family: $font__code;
-   padding: $base__space-unit 0;
-   font-weight: 400;
-   text-align: center;
-   text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-family: $font__code;
+    padding: $base__space-unit 0;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
 }
-

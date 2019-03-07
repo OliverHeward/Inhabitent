@@ -43,6 +43,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Page Templates
 	## Front page
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Mixins
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -227,7 +233,7 @@ th {
 --------------------------------------------------------------*/
 @font-face {
   font-family: 'Merriweather';
-  src: url("../../fonts/fonts/Merriweather-LightItalic.woff2") format("woff2"), url("../../fonts/Merriweather-LightItalic.woff") format("woff");
+  src: url("../../fonts/Merriweather-LightItalic.woff2") format("woff2"), url("../../fonts/Merriweather-LightItalic.woff") format("woff");
   font-weight: 300;
   font-style: italic; }
 
@@ -362,7 +368,7 @@ body {
 
 blockquote,
 q {
-  quotes: '' ''; }
+  quotes: "" ""; }
   blockquote:before, blockquote:after,
   q:before,
   q:after {
@@ -464,7 +470,9 @@ input[type="submit"] {
   border: 1px solid #248a83;
   color: white; }
 
-/* Fields */
+/*--------------------------------------------------------------
+# Fields
+--------------------------------------------------------------*/
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -499,13 +507,17 @@ form br {
 label {
   color: #2f1339;
   display: block;
-  font-family: 'Novecento Sans Web',sans-serif;
+  font-family: 'Novecento Sans Web', sans-serif;
   font-size: 17.6px;
   font-size: 1.1rem;
   margin-bottom: .2rem;
   text-transform: uppercase; }
 
-.wpfc7-form-control-wrap, .contact-form-message {
+/*--------------------------------------------------------------
+# WordPress Contact 7 Form 
+--------------------------------------------------------------*/
+.wpfc7-form-control-wrap,
+.contact-form-message {
   height: 300px;
   width: 100%; }
 
@@ -530,7 +542,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-family: 'Novecento Sans Web' ,sans-serif;
+  font-family: 'Novecento Sans Web', sans-serif;
   text-transform: uppercase; }
   .main-navigation ul {
     display: none;
@@ -645,6 +657,9 @@ a {
             align-items: center;
     padding-left: .7rem; }
 
+/*--------------------------------------------------------------
+# Site Header Reverse For Hero Image Pages
+--------------------------------------------------------------*/
 .site-header.reverse {
   position: absolute;
   background-color: transparent;
@@ -719,6 +734,9 @@ a {
     .header-search input[type="search"]:focus {
       outline: none; }
 
+/*--------------------------------------------------------------
+# Footer Style Sheet
+--------------------------------------------------------------*/
 .site-footer {
   background: url(../../images/dark-wood@2x.png);
   background-size: 512px 512px;
@@ -841,9 +859,11 @@ a {
   display: none; }
 
 /*--------------------------------------------------------------
-# Content
+# Content Style Sheet
 --------------------------------------------------------------*/
-/* Posts and pages */
+/*--------------------------------------------------------------
+# Posts and Pages #
+--------------------------------------------------------------*/
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -862,6 +882,9 @@ body {
 .sticky {
   display: block; }
 
+/*--------------------------------------------------------------
+# Single Post
+--------------------------------------------------------------*/
 .single-post .site-content {
   margin-left: auto;
   margin-right: auto;
@@ -904,6 +927,8 @@ body {
     position: absolute;
     right: 0;
     text-transform: uppercase; }
+    .single-post .entry-header .entry-meta a {
+      color: #fff; }
 
 .hentry {
   margin: 0 0 4.5rem; }
@@ -933,6 +958,9 @@ body {
 .archive .format-aside .entry-title {
   display: none; }
 
+/*--------------------------------------------------------------
+# Widget Area
+--------------------------------------------------------------*/
 .widget-area {
   padding-left: 3rem;
   padding-top: 6rem; }
@@ -941,8 +969,12 @@ body {
     .widget-area .widget h2 {
       font-size: 1.3rem;
       font-family: 'Novecento Sans Web', sans-serif; }
+    .widget-area .widget span.day-of-week {
+      font-weight: bolder; }
 
-/* Comments */
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
 .comment-content a {
   word-wrap: break-word; }
 
@@ -1057,7 +1089,9 @@ object {
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
-/* Front page */
+/*--------------------------------------------------------------
+# Front Page -> Page-id-44
+--------------------------------------------------------------*/
 .page-id-44 .journal,
 .page-id-44 .shop {
   margin-bottom: 3.5rem; }
@@ -1251,6 +1285,9 @@ object {
     font-size: 19.2px;
     font-size: 1.2rem; }
 
+/*--------------------------------------------------------------
+# About Page -> page-id-16
+--------------------------------------------------------------*/
 .page-id-16 .site-content {
   width: 100vw; }
 
@@ -1279,6 +1316,9 @@ object {
   text-align: center;
   font-size: 2.1rem; }
 
+/*--------------------------------------------------------------
+# Blog Page
+--------------------------------------------------------------*/
 .blog .site-content {
   margin-left: auto;
   margin-right: auto;
@@ -1328,21 +1368,9 @@ object {
 .site-info a {
   color: #fff; }
 
-.single-adventures .entry-content {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-  margin-top: 50px; }
-  .single-adventures .entry-content .entry-title {
-    margin-top: 3rem; }
-  .single-adventures .entry-content .entry-meta {
-    font-family: 'Novecento Sans Web', sans-serif;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    padding-bottom: 20px; }
-  .single-adventures .entry-content .entry-content {
-    width: 800px; }
-
+/*--------------------------------------------------------------
+# Find Us Page -> page-id-19
+--------------------------------------------------------------*/
 .page-id-19 .site-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1361,6 +1389,9 @@ object {
     font-size: 2.1rem;
     line-height: 1.25; }
 
+/*--------------------------------------------------------------
+# Error Page - 404
+--------------------------------------------------------------*/
 .error404 .site-content {
   margin-left: auto;
   margin-right: auto;
@@ -1379,7 +1410,11 @@ object {
       .error404 .site-content .content-area .page-content .404-search .search-form {
         width: 250px; }
 
-.search-results .site-content, .search-no-results .site-content {
+/*--------------------------------------------------------------
+# Search Page
+--------------------------------------------------------------*/
+.search-results .site-content,
+.search-no-results .site-content {
   margin-left: auto;
   margin-right: auto;
   width: 1120px;
@@ -1387,22 +1422,26 @@ object {
   display: -ms-flexbox;
   display: flex; }
 
-.search-results .content-area, .search-no-results .content-area {
+.search-results .content-area,
+.search-no-results .content-area {
   border-right: 1px solid #e1e1e1;
   padding-right: 5%;
   width: 73%;
   padding-top: 6rem;
   padding-bottom: 3rem; }
-  .search-results .content-area .page-title, .search-no-results .content-area .page-title {
+  .search-results .content-area .page-title,
+  .search-no-results .content-area .page-title {
     padding-bottom: 2rem;
     border-bottom: 1px solid #e1e1e1; }
 
-.search-results .search-pagination, .search-no-results .search-pagination {
+.search-results .search-pagination,
+.search-no-results .search-pagination {
   border-top: 1px solid #e1e1e1;
   font-family: 'Novecento Sans Web', sans-serif;
   padding: 1.5rem 0;
   text-transform: uppercase; }
-  .search-results .search-pagination .page-numbers, .search-no-results .search-pagination .page-numbers {
+  .search-results .search-pagination .page-numbers,
+  .search-no-results .search-pagination .page-numbers {
     background-color: #248a83;
     color: #fff;
     display: inline-block;
@@ -1414,7 +1453,9 @@ object {
 /*--------------------------------------------------------------
 # Adventures
 --------------------------------------------------------------*/
-/* Adventure Post Type Archive */
+/*--------------------------------------------------------------
+# Adventure Post Type Archive
+--------------------------------------------------------------*/
 .post-type-archive-adventures .site-content {
   margin-left: auto;
   margin-right: auto;
@@ -1485,6 +1526,27 @@ object {
       .adventure-grid-item .adventure-title a:hover {
         color: #f0e4d1; }
 
+/*--------------------------------------------------------------
+# Single Adventure Page
+--------------------------------------------------------------*/
+.single-adventures .entry-content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  margin-top: 50px; }
+  .single-adventures .entry-content .entry-title {
+    margin-top: 3rem; }
+  .single-adventures .entry-content .entry-meta {
+    font-family: 'Novecento Sans Web', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding-bottom: 20px; }
+  .single-adventures .entry-content .entry-content {
+    width: 800px; }
+
+/*--------------------------------------------------------------
+# Product Type Page
+--------------------------------------------------------------*/
 .post-type-archive-product .content-area {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -1494,7 +1556,8 @@ object {
 
 .post-type-archive-product .page-header,
 .tax-product-type .page-header,
-.post-type-archive .page-header, .tax-product_type .page-header {
+.post-type-archive .page-header,
+.tax-product_type .page-header {
   border-bottom: 1px dashed #c8c8c8;
   padding-bottom: 2rem;
   margin-bottom: 3rem;
