@@ -22,7 +22,7 @@
                 <!-- PHP Object Retrieving Product Type Term (name) -->
                 <?php
                     $terms = get_terms(array(
-                    	'taxonomy' => 'product_type',
+                    	'taxonomy' => 'courses',
                     	'hide_empty' => false,
                     ));
                     foreach ($terms as $term) {?> <!-- Start of Foreach Loop -->

@@ -12,5 +12,5 @@
                 width: "hide";
             })
         })
-    })
+
 }(jQuery);
